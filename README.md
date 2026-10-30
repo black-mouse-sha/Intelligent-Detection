@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/images/board-top.jpg" width="240" alt="多参数环境监测与自动化控制平台实物">
+<img src="https://cdn.jsdelivr.net/gh/black-mouse-sha/Intelligent-Detection@main/docs/images/board-top.jpg" width="240" alt="多参数环境监测与自动化控制平台实物">
 
 <h1 align="center">多参数环境监测与自动化控制平台</h1>
 
@@ -42,12 +42,12 @@
 
 | 实物：洞洞板整机 | 细节：土壤湿度探针与继电器 |
 |:---:|:---:|
-| <img src="docs/images/board-top.jpg" width="420" alt="整机俯拍"> | <img src="docs/images/board-detail.jpg" width="420" alt="侧面细节"> |
+| <img src="https://cdn.jsdelivr.net/gh/black-mouse-sha/Intelligent-Detection@main/docs/images/board-top.jpg" width="420" alt="整机俯拍"> | <img src="https://cdn.jsdelivr.net/gh/black-mouse-sha/Intelligent-Detection@main/docs/images/board-detail.jpg" width="420" alt="侧面细节"> |
 | Nano 居中，右侧 OLED，左上 ESP-01S，下方继电器 | 浊度探头、土壤探针、雨滴板都接在同一块板子上 |
 
 | OLED 本地显示 | 手机端监控页 |
 |:---:|:---:|
-| <img src="docs/images/oled-display.jpg" width="420" alt="OLED 显示"> | <img src="docs/images/phone-app.jpg" width="210" alt="手机端"> |
+| <img src="https://cdn.jsdelivr.net/gh/black-mouse-sha/Intelligent-Detection@main/docs/images/oled-display.jpg" width="420" alt="OLED 显示"> | <img src="https://cdn.jsdelivr.net/gh/black-mouse-sha/Intelligent-Detection@main/docs/images/phone-app.jpg" width="210" alt="手机端"> |
 | 温湿度、光照、当前调节阈值分屏显示 | 连上热点后实时收数，底部可直接开关排水继电器 |
 
 > 上方两张实拍是同一块板子的不同角度；手机端页面在另一台设备上，本仓库只含下位机侧代码。
@@ -103,17 +103,17 @@
 
 ## 系统组成
 
-![系统组成](docs/images/diagrams/architecture.png)
+![系统组成](https://cdn.jsdelivr.net/gh/black-mouse-sha/Intelligent-Detection@main/docs/images/diagrams/architecture.png)
 
-<sub>交互版（可缩放、可切换主题、节点带源码定位）：[docs/diagrams/esp-monitor-architecture.html](docs/diagrams/esp-monitor-architecture.html)，下载后用浏览器打开。</sub>
+<sub>交互版（可缩放、可切换主题、节点带源码定位）：[docs/diagrams/esp-monitor-architecture.html](https://black-mouse-sha.github.io/Intelligent-Detection/diagrams/esp-monitor-architecture.html)，浏览器直接打开即可。</sub>
 
 一条从传感器到手机的单向链路：传感器阵列 → Nano 主控 → 本地 OLED 与执行器；联网这条支路交给 ESP-01S，它只做 AT 指令的搬运，不参与业务判断。
 
 ## 主循环流程
 
-![主循环流程](docs/images/diagrams/loop.png)
+![主循环流程](https://cdn.jsdelivr.net/gh/black-mouse-sha/Intelligent-Detection@main/docs/images/diagrams/loop.png)
 
-<sub>交互版：[docs/diagrams/esp-monitor-loop.html](docs/diagrams/esp-monitor-loop.html)</sub>
+<sub>交互版：[docs/diagrams/esp-monitor-loop.html](https://black-mouse-sha.github.io/Intelligent-Detection/diagrams/esp-monitor-loop.html)</sub>
 
 一轮 `loop()` 约 200 ms：读全部在线传感器 → 处理按键 → 刷新 OLED → 逐项比对阈值 → 组装数据帧上报。越限时进入报警分支，打开声光与继电器；正常时关闭。
 
