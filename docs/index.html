@@ -26,13 +26,16 @@
   .sub { color: var(--muted); margin: 0 0 36px; font-size: 15px; }
   .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
   a.card {
-    display: block; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; text-decoration: none; color: inherit;
     background: var(--card); border: 1px solid var(--line); border-radius: 12px;
     overflow: hidden; transition: border-color .15s, transform .15s;
   }
   a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  a.card img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
-  .body { padding: 16px 18px 18px; }
+  a.card img {
+    display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain;
+    background: var(--bg); padding: 10px; border-bottom: 1px solid var(--line);
+  }
+  .body { padding: 16px 18px 18px; flex: 1; }
   .body strong { display: block; font-size: 16px; margin-bottom: 4px; }
   .body span { color: var(--muted); font-size: 14px; }
   footer { margin-top: 40px; color: var(--muted); font-size: 14px; }
