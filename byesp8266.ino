@@ -73,14 +73,14 @@ void loop() {
 void checkAlarms() {
   bool alarm = false;
   
-  if (mq2Value == mq2Threshold) alarm = true;
+  if (mq2Value >= mq2Threshold) alarm = true;
   if (lightValue > lightThreshold) alarm = true;
-  if (dustValue == dustThreshold) alarm = true;
+  if (dustValue >= dustThreshold) alarm = true;
   // if (mq135Value == mq135Threshold) alarm = true;
   // if (mq7Value == mq7Threshold) alarm = true;
-  if (turbidityValue == turbidityThreshold) alarm = true;
-  if (temperature == tempThreshold) alarm = true;
-  if (humidity == humThreshold) alarm = true;
+  if (turbidityValue >= turbidityThreshold) alarm = true;
+  if (temperature >= tempThreshold) alarm = true;
+  if (humidity >= humThreshold) alarm = true;
 
   if (alarm) {
     digitalWrite(BUZZER_PIN, HIGH);
